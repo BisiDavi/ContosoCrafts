@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Learning ASP.Net";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Learning ASP.NET</h1>
+    <p>The time on the server is @DateTime.Now</p>
+</div>
+
+<div class="card-columns">
+    @foreach (var product in Model.Products)
+    {
+        
+        <div class="card">
+            <div class="card-img" 
+            style="background-image:url('@product.Image');"></div>
+            <div class="card-body">                
+                <div class="card-title">
+                    <h3>@product.Title</h3>    
+                    <p>@product.Description</p>
+                    <i>@product.Maker</i>
+                </div>
+            </div>
+        </div>
+    }
+</div>
